@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed&display=swap" rel="stylesheet">
+    <style>
+        
+    
+body {
+	margin:0;
+	font-family: 'Roboto Condensed', sans-serif;
+	background: linear-gradient(rgba(252, 170, 242, 0.062), rgba(248, 50, 222, 0.582));
+}
+
+ 
+h1 {
+	 	  
+	color:#333;
+	font-weight:700;
+	margin-top:205px;	
+	margin-bottom: 20px; 
+	text-align:center;
+	text-transform:uppercase;
+	letter-spacing:4px;
+	line-height:23px;
+}
+
+/* --- Start progress bar --- */
+
+.process-wrapper {
+	margin:auto;
+	max-width:1080px;
+	background-image: url("");
+	margin-top: 50px;
+	margin-bottom: 50px;
+	
+}
+
+#progress-bar-container {
+	position:relative;
+	width:90%;
+	margin:auto;
+	height:100px;
+	margin-top:65px;
+}
+
+#progress-bar-container ul {
+	padding:0;
+	margin:0;
+	padding-top:15px;
+	z-index:9999;
+	position:absolute;
+	width:100%;
+	margin-top:-40px
+}
+
+#progress-bar-container li:before {
+	content:" ";
+	display:block;
+	margin:auto;
+	width:30px;
+	height:30px;
+	border-radius:50%;
+	border:solid 2px #aaa;
+	transition:all ease 0.3s;
+     
+}
+
+#progress-bar-container li.active:before, #progress-bar-container li:hover:before {
+	border:solid 2px #fff;
+       	 
+	background: linear-gradient(to right, #E91E63 0%,#fff 100%); 
+}
+
+#progress-bar-container li {
+	list-style:none;
+	float:left;
+	width:20%;
+	text-align:center;
+	color:#aaa;
+	text-transform:uppercase;
+	font-size:11px;
+	cursor:pointer;
+	font-weight:700;
+	transition:all ease 0.2s;
+	vertical-align:bottom;
+	height:60px;
+	position:relative;
+}
+
+#progress-bar-container li .step-inner {
+	position:absolute;
+	width:100%;
+	bottom:0;
+    font-size: 14px;
+}
+
+#progress-bar-container li.active, #progress-bar-container li:hover {
+	color:#444;
+}
+
+#progress-bar-container li:after {
+	content:" ";
+	display:block;
+	width:6px;
+	height:6px;
+	background:#777;
+	margin:auto;
+	border:solid 7px #fff;
+	border-radius:50%;
+	margin-top:40px;
+	box-shadow:0 2px 13px -1px rgba(0,0,0,0.3);
+	transition:all ease 0.2s;
+     
+}
+
+#progress-bar-container li:hover:after {
+	background:#555;
+}
+
+#progress-bar-container li.active:after {
+	background:#207893;
+}
+
+#progress-bar-container #line {
+	width:80%;
+	margin:auto;
+	background: #eee;
+	height:6px;
+	position:absolute;
+	left:10%;
+	top:57px;
+	z-index:1;
+	border-radius:50px;
+	transition:all ease 0.9s;
+}
+
+#progress-bar-container #line-progress {
+	content:" ";
+	width:3%;
+	height:100%;
+	background: #207893;	 
+	background: linear-gradient(to right, #207893 0%,#2ea3b7 100%); 
+	position:absolute;
+	z-index:2;
+	border-radius:50px;
+	transition:all ease 0.9s;
+}
+
+#progress-content-section {
+	width:90%;
+	margin: auto;
+	background: #f3f3f3;
+	border-radius: 4px;
+}
+
+#progress-content-section .section-content {
+	padding:30px 40px;
+	text-align:center;
+}
+
+#progress-content-section .section-content h2 {
+	font-size:17px;
+	text-transform:uppercase;
+	color:#333;
+	letter-spacing:1px;
+}
+
+#progress-content-section .section-content p {
+	font-size:16px;
+	line-height:1.8em;
+	color:#777;
+}
+#progress-content-section .button {
+	/* font-size:16px;
+	box-sizing: none;
+	background-color: ;
+	text-decoration: none;
+	list-style-type: none; */
+
+	background: linear-gradient(to right, #E91E63 0%,#fff 100%);
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+
+	
+	color:rgb(204, 106, 188);
+}
+#progress-content-section .button :hover{
+    border: solid 15px 32px;
+    background: linear-gradient(to right, #E91E63 0%,#fff 100%);
+}
+#progress-content-section .button .a{
+	text-decoration: none;
+}
+
+#progress-content-section .section-content {
+	display:none;
+	animation: FadeInUp 700ms ease 1;
+	animation-fill-mode:forwards;
+	transform:translateY(15px);
+	opacity:0;
+}
+
+#progress-content-section .section-content.active {
+	display:block;
+}
+
+@keyframes FadeInUp {
+	0% {
+		transform:translateY(15px);
+		opacity:0;
+	}
+	
+	100% {
+		transform:translateY(0px);
+		opacity:1;
+	}
+}
+
+ 
+    </style>
+</head>
+<body>
+ 
+
+<h1>Our Process</h1>
+<br> 
+<div class="process-wrapper">
+<div id="progress-bar-container">
+	<ul>
+		<li class="step step01 active"><div class="step-inner">C</div></li>
+		<li class="step step02"><div class="step-inner">C++</div></li>
+		<li class="step step03"><div class="step-inner">JAVA</div></li>
+		<li class="step step04"><div class="step-inner">PYTHON</div></li>
+		<li class="step step05"><div class="step-inner">PHP</div></li>
+	</ul>
+	
+	<div id="line">
+		<div id="line-progress"></div>
+	</div>
+</div>
+
+<div id="progress-content-section">
+	<div class="section-content discovery active">
+		<h2>C Language</h2>
+		<p>C is a general-purpose, procedural computer programming language supporting structured programming, lexical variable scope, and recursion, with a static type system. By design, C provides constructs that map efficiently to typical machine instructions.
+			C is a high-level and general-purpose programming language that is ideal for developing firmware or portable applications. Originally intended for writing system software, C was developed at Bell Labs by Dennis Ritchie for the Unix Operating System in the early 1970s. </p>
+		<button  class="button"><a href="cart/c.html">More Details</a></button>
+	</div>
+	
+	<div class="section-content strategy">
+		<h2>C++</h2>
+      <p>C++ is a computer programming language based on C. It was created for writing programs for many different purposes.C++ is a statically typed, compiled, general-purpose, case-sensitive, free-form programming language that supports procedural, 
+		  object-oriented, and generic programming. C++ is regarded as a middle-level language, as it comprises a combination of both high-level and low-level languag
+		  e features.C++ is a powerful general-purpose programming language. It can be used to develop operating systems, browsers, games, and so on. C++ supports different ways of programming like procedural, object-oriented, functional, and so on. This makes C++ powerful as well as flexible.
+
+		  Our C++ programming tutorial will guide you to learn C++ programming one step at a time.</p>
+
+		<button  class="button"><a href="cart/c++.html">More Details </a></button>
+	</div>
+	
+	<div class="section-content creative">
+		<h2>JAVA</h2>
+      <p>Java is a high-level, class-based, object-oriented programming language that is designed to have as few implementation dependencies as possible. It is a general-purpose programming language intended to let application developers meaning that compiled Java code can run on all platforms that support Java without the need for recompilation. The syntax of Java is similar to C and C++, but has 
+		  fewer low-level facilities than either of them. The Java runtime provides dynamic capabilities (such as reflection and runtime code modification) that are typically not available in traditional compiled languages. </p>
+		<button  class="button"><a href="cart/java.html">More Details</a></button>
+	</div>
+	
+	<div class="section-content production">
+		<h2>PYTHON</h2>
+		<p>Python is an interpreted high-level general-purpose programming language. Its design philosophy emphasizes code readability with its use of significant indentation. Its language constructs as well as its object-oriented approach aim to help programmers write clear, logical code for small and large-scale projects.
+
+			Python is dynamically-typed and garbage-collected.</p> 
+			<p>It supports multiple programming paradigms, including structured (particularly, procedural), object-oriented and functional programming. It is often described as a "batteries included" language due to its comprehensive standard library.</p>
+		
+		<button  class="button"><a href="cart/py.html">More Details</a></button>
+	</div>
+	
+	<div class="section-content analysis">
+		<h2>PHP</h2>
+		<P>PHP is a general-purpose scripting language geared towards web development.The PHP reference implementation is now produced by The PHP Group.PHP originally
+			 stood for Personal Home Page, but it now stands for the recursive initialism PHP: Hypertext Preprocessor. PHP code is usually processed on a web server by a PHP interpreter implemented as a module, a daemon or as a Common Gateway Interface (CGI) executable. On a web server, the result of the interpreted and executed PHP code – which may be any type of data, such as generated HTML or binary image data – would form the whole or part of an HTTP response.</P>
+		<button  class="button"><a href="cart/php.html">More Details </a></button>
+	</div>
+	</div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+ <script>
+    
+    $(".step").click( function() {
+	$(this).addClass("active").prevAll().addClass("active");
+	$(this).nextAll().removeClass("active");
+});
+
+$(".step01").click( function() {
+	$("#line-progress").css("width", "3%");
+	$(".discovery").addClass("active").siblings().removeClass("active");
+});
+
+$(".step02").click( function() {
+	$("#line-progress").css("width", "25%");
+	$(".strategy").addClass("active").siblings().removeClass("active");
+});
+
+$(".step03").click( function() {
+	$("#line-progress").css("width", "50%");
+	$(".creative").addClass("active").siblings().removeClass("active");
+});
+
+$(".step04").click( function() {
+	$("#line-progress").css("width", "75%");
+	$(".production").addClass("active").siblings().removeClass("active");
+});
+
+$(".step05").click( function() {
+	$("#line-progress").css("width", "100%");
+	$(".analysis").addClass("active").siblings().removeClass("active");
+});
+
+ 
+    </script>
+</body>
+</html>

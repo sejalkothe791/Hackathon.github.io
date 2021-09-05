@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed&display=swap" rel="stylesheet">
+    <style>
+        
+    
+body {
+	margin:0;
+	font-family: 'Roboto Condensed', sans-serif;
+	background: linear-gradient(rgba(252, 170, 242, 0.062), rgba(248, 50, 222, 0.582));
+}
+
+ 
+h1 {
+	 	  
+	color:#333;
+	font-weight:700;
+	margin-top:205px;	
+	margin-bottom: 20px; 
+	text-align:center;
+	text-transform:uppercase;
+	letter-spacing:4px;
+	line-height:23px;
+}
+
+/* --- Start progress bar --- */
+
+.process-wrapper {
+	margin:auto;
+	max-width:1080px;
+	background-image: url("");
+	margin-top: 50px;
+	margin-bottom: 50px;
+	
+}
+
+#progress-bar-container {
+	position:relative;
+	width:90%;
+	margin:auto;
+	height:100px;
+	margin-top:65px;
+}
+
+#progress-bar-container ul {
+	padding:0;
+	margin:0;
+	padding-top:15px;
+	z-index:9999;
+	position:absolute;
+	width:100%;
+	margin-top:-40px
+}
+
+#progress-bar-container li:before {
+	content:" ";
+	display:block;
+	margin:auto;
+	width:30px;
+	height:30px;
+	border-radius:50%;
+	border:solid 2px #aaa;
+	transition:all ease 0.3s;
+     
+}
+
+#progress-bar-container li.active:before, #progress-bar-container li:hover:before {
+	border:solid 2px #fff;
+       	 
+	background: linear-gradient(to right, #E91E63 0%,#fff 100%); 
+}
+
+#progress-bar-container li {
+	list-style:none;
+	float:left;
+	width:20%;
+	text-align:center;
+	color:#aaa;
+	text-transform:uppercase;
+	font-size:11px;
+	cursor:pointer;
+	font-weight:700;
+	transition:all ease 0.2s;
+	vertical-align:bottom;
+	height:60px;
+	position:relative;
+}
+
+#progress-bar-container li .step-inner {
+	position:absolute;
+	width:100%;
+	bottom:0;
+    font-size: 14px;
+}
+
+#progress-bar-container li.active, #progress-bar-container li:hover {
+	color:#444;
+}
+
+#progress-bar-container li:after {
+	content:" ";
+	display:block;
+	width:6px;
+	height:6px;
+	background:#777;
+	margin:auto;
+	border:solid 7px #fff;
+	border-radius:50%;
+	margin-top:40px;
+	box-shadow:0 2px 13px -1px rgba(0,0,0,0.3);
+	transition:all ease 0.2s;
+     
+}
+
+#progress-bar-container li:hover:after {
+	background:#555;
+}
+
+#progress-bar-container li.active:after {
+	background:#207893;
+}
+
+#progress-bar-container #line {
+	width:80%;
+	margin:auto;
+	background: #eee;
+	height:6px;
+	position:absolute;
+	left:10%;
+	top:57px;
+	z-index:1;
+	border-radius:50px;
+	transition:all ease 0.9s;
+}
+
+#progress-bar-container #line-progress {
+	content:" ";
+	width:3%;
+	height:100%;
+	background: #207893;	 
+	background: linear-gradient(to right, #207893 0%,#2ea3b7 100%); 
+	position:absolute;
+	z-index:2;
+	border-radius:50px;
+	transition:all ease 0.9s;
+}
+
+#progress-content-section {
+	width:90%;
+	margin: auto;
+	background: #f3f3f3;
+	border-radius: 4px;
+}
+
+#progress-content-section .section-content {
+	padding:30px 40px;
+	text-align:center;
+}
+
+#progress-content-section .section-content h2 {
+	font-size:17px;
+	text-transform:uppercase;
+	color:#333;
+	letter-spacing:1px;
+}
+
+#progress-content-section .section-content p {
+	font-size:16px;
+	line-height:1.8em;
+	color:#777;
+}
+#progress-content-section .button {
+	/* font-size:16px;
+	box-sizing: none;
+	background-color: ;
+	text-decoration: none;
+	list-style-type: none; */
+
+	background: linear-gradient(to right, #E91E63 0%,#fff 100%);
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+
+	
+	color:rgb(204, 106, 188);
+}
+#progress-content-section .button :hover{
+    border: solid 15px 32px;
+    background: linear-gradient(to right, #E91E63 0%,#fff 100%);
+}
+#progress-content-section .button .a{
+	text-decoration: none;
+}
+
+#progress-content-section .section-content {
+	display:none;
+	animation: FadeInUp 700ms ease 1;
+	animation-fill-mode:forwards;
+	transform:translateY(15px);
+	opacity:0;
+}
+
+#progress-content-section .section-content.active {
+	display:block;
+}
+
+@keyframes FadeInUp {
+	0% {
+		transform:translateY(15px);
+		opacity:0;
+	}
+	
+	100% {
+		transform:translateY(0px);
+		opacity:1;
+	}
+}
+
+ 
+    </style>
+</head>
+<body>
+ 
+
+<h1>Our Process</h1>
+<br> 
+<div class="process-wrapper">
+<div id="progress-bar-container">
+	<ul>
+		<li class="step step01 active"><div class="step-inner">HTML</div></li>
+		<li class="step step02"><div class="step-inner">CSS</div></li>
+		<li class="step step03"><div class="step-inner">JAVASCRIPT</div></li>
+		<li class="step step04"><div class="step-inner">BOOTSTRAP</div></li>
+		<li class="step step05"><div class="step-inner">NODE.JS</div></li>
+	</ul>
+	
+	<div id="line">
+		<div id="line-progress"></div>
+	</div>
+</div>
+
+<div id="progress-content-section">
+	<div class="section-content discovery active">
+		<h2>HTML</h2>
+		<p>The HyperText Markup Language, or HTML is the standard markup language for documents designed to be displayed in a web browser. It can be assisted by technologies such as Cascading Style Sheets (CSS) and scripting languages such as JavaScript.
+
+			Web browsers receive HTML documents from a web server or from local storage and render the documents into multimedia web pages. HTML describes the structure of a web page semantically and originally included cues for the appearance of the document.</p>
+		<button  class="button"><a href="cart/Html.html">More Details</a></button>
+	</div>
+	
+	<div class="section-content strategy">
+		<h2>CSS</h2>
+		<p>Cascading Style Sheets (CSS) is a style sheet language used for describing the presentation of a document written in a markup language such as HTML.[1] CSS is a cornerstone technology of the World Wide Web, alongside HTML and JavaScript.[2]
+
+			CSS is designed to enable the separation of presentation and content, including layout, colors, and fonts.[3] This separation can improve content accessibility, provide more flexibility and control in the specification of presentation characteristics, enable multiple web pages to share formatting by specifying the relevant CSS in a separate .css file which reduces complexity and repetition in the structural content as well as enabling the .css file to be cached to improve the page load speed between the pages that share the file and its formatting.</p>
+			<button  class="button"><a href="cart/css (2).html">More Details</a></button>
+	</div>
+	
+	<div class="section-content creative">
+		<h2>JAVASCRIPT</h2>
+		<p>JS, is a programming language that conforms to the ECMAScript specification.[10] JavaScript is high-level, often just-in-time compiled, and multi-paradigm. It has curly-bracket syntax, dynamic typing, prototype-based object-orientation, and first-class functions.
+
+			Alongside HTML and CSS, JavaScript is one of the core technologies of the World Wide Web.[11] Over 97% of websites use it client-side for web page behavior,[12] often incorporating third-party libraries.[13] Most web browsers have a dedicated JavaScript engine to execute the code on the user's device.</p>
+		<button  class="button"><a href="cart/js.html">More Details</a></button>
+	</div>
+	
+	<div class="section-content production">
+		<h2>BOOTSTRAP</h2>
+		
+		<p>Bootstrap is a free and open-source CSS framework directed at responsive, mobile-first front-end web development. It contains CSS- and (optionally) JavaScript-based design templates for typography, forms, buttons, navigation, and other interface components.</p>
+		 <p>Bootstrap is an HTML, CSS & JS Library that focuses on simplifying the development of informative web pages (as opposed to web apps). The primary purpose of adding it to a web project is to apply Bootstrap's choices of color, size, font and layout to that project.</p>
+		
+		<button  class="button"><a href="https://www.w3schools.com/bootstrap/">More Details</a></button>
+
+		<!-- <center><form method="get" action="https://www.w3schools.com/bootstrap/">
+			<button type="submit">More Details</button></center>
+	 -->
+	</div>
+	
+	<div class="section-content analysis">
+		<h2>NODE.JS</h2>
+		<p>Node.js is an open-source, cross-platform, back-end JavaScript runtime environment that runs on the V8 engine and executes JavaScript code outside a web browser. Node.js lets developers use JavaScript to write command line tools and for server-side scripting—running scripts server-side to produce dynamic web page content before the page is sent to the user's web browser. Consequently, Node.js represents a "JavaScript everywhere" paradigm,[6] unifying web-application development around a single programming language, rather than different languages for server-side and client-side scripts.</p>
+		<!-- <button  class="button"><a href="#">More Details</a></button> -->
+
+		<center><form method="get" action="https://www.tutorialspoint.com/learn_nodejs_by_building_10_projects/index.asp">
+			<button type="submit">More Details</button></center>
+	
+	</div>
+	</div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+ <script>
+    
+    $(".step").click( function() {
+	$(this).addClass("active").prevAll().addClass("active");
+	$(this).nextAll().removeClass("active");
+});
+
+$(".step01").click( function() {
+	$("#line-progress").css("width", "3%");
+	$(".discovery").addClass("active").siblings().removeClass("active");
+});
+
+$(".step02").click( function() {
+	$("#line-progress").css("width", "25%");
+	$(".strategy").addClass("active").siblings().removeClass("active");
+});
+
+$(".step03").click( function() {
+	$("#line-progress").css("width", "50%");
+	$(".creative").addClass("active").siblings().removeClass("active");
+});
+
+$(".step04").click( function() {
+	$("#line-progress").css("width", "75%");
+	$(".production").addClass("active").siblings().removeClass("active");
+});
+
+$(".step05").click( function() {
+	$("#line-progress").css("width", "100%");
+	$(".analysis").addClass("active").siblings().removeClass("active");
+});
+
+ 
+    </script>
+</body>
+</html>
